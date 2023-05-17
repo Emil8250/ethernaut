@@ -1,0 +1,16 @@
+//Deploy med remix og brug MetaMask provider
+
+// SPDX-License-Identifier: GPL-3.0
+pragma solidity ^0.8.17;
+contract Win {
+    address constant heroaddress = 0x24724bc26067488E91f600E393Ece8793Cb2d924;
+    bytes constant  first = hex"3c5269d8";
+    bytes constant  second = hex"75ec067a";
+
+    function callWin1() public {
+        (bool result, ) = heroaddress.call(first);
+        require(result, "Data send failed");
+        (bool result2, ) = heroaddress.call(second);
+         require(result2, "Data send failed");
+    }
+}
